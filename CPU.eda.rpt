@@ -1,0 +1,100 @@
+EDA Netlist Writer report for CPU
+Fri Sep 07 17:35:50 2012
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. EDA Netlist Writer Summary
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Fri Sep 07 17:35:50 2012 ;
+; Revision Name             ; CPU                                   ;
+; Top-level Entity Name     ; CPU                                   ;
+; Family                    ; Cyclone III                           ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                    ;
++--------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                     ; Setting                   ;
++--------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                  ; ModelSim-Altera (Verilog) ;
+; Generate netlist for functional simulation only                                            ; Off                       ;
+; Time scale                                                                                 ; 1 ps                      ;
+; Truncate long hierarchy paths                                                              ; Off                       ;
+; Map illegal HDL characters                                                                 ; Off                       ;
+; Flatten buses into individual nodes                                                        ; Off                       ;
+; Maintain hierarchy                                                                         ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                           ; Off                       ;
+; Enable glitch filtering                                                                    ; Off                       ;
+; Do not write top level VHDL entity                                                         ; Off                       ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                   ; structure                 ;
++--------------------------------------------------------------------------------------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                 ;
++------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                            ;
++------------------------------------------------------------------------------------------------------------+
+; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/CPU.vo                       ;
+; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/CPU_6_1200mv_0c_slow.vo      ;
+; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/CPU_min_1200mv_0c_fast.vo    ;
+; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/CPU_v.sdo                    ;
+; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/CPU_6_1200mv_0c_v_slow.sdo   ;
+; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/CPU_min_1200mv_0c_v_fast.sdo ;
++------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------+
+; EDA Netlist Writer Messages ;
++-----------------------------+
+Info: *******************************************************************
+Info: Running Quartus II EDA Netlist Writer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Fri Sep 07 17:35:34 2012
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off CPU -c CPU
+Info: Generated file CPU.vo in folder "F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/" for EDA simulation tool
+Info: Generated file CPU_6_1200mv_0c_slow.vo in folder "F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/" for EDA simulation tool
+Info: Generated file CPU_min_1200mv_0c_fast.vo in folder "F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/" for EDA simulation tool
+Info: Generated file CPU_v.sdo in folder "F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/" for EDA simulation tool
+Info: Generated file CPU_6_1200mv_0c_v_slow.sdo in folder "F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/" for EDA simulation tool
+Info: Generated file CPU_min_1200mv_0c_v_fast.sdo in folder "F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Allocated 158 megabytes of memory during processing
+    Info: Processing ended: Fri Sep 07 17:35:51 2012
+    Info: Elapsed time: 00:00:17
+
+

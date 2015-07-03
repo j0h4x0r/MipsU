@@ -1,0 +1,1447 @@
+Analysis & Synthesis report for CPU
+Fri Sep 07 17:33:59 2012
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Added for RAM Pass-Through Logic
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF__dual_rtl_0|altsyncram_ice1:auto_generated
+ 16. Source assignments for MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF_rtl_1|altsyncram_ice1:auto_generated
+ 17. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux4:inst7|lpm_mux:lpm_mux_component
+ 18. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component
+ 19. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux5:inst|lpm_mux:lpm_mux_component
+ 20. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux7:inst3|lpm_mux:lpm_mux_component
+ 21. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|const14:14|lpm_constant:lpm_constant_component
+ 22. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux6:inst10|lpm_mux:lpm_mux_component
+ 23. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux7:inst2|lpm_mux:lpm_mux_component
+ 24. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux3:inst5|lpm_mux:lpm_mux_component
+ 25. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|const31:31|lpm_constant:lpm_constant_component
+ 26. Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux1:inst1|lpm_mux:lpm_mux_component
+ 27. Parameter Settings for User Entity Instance: lpm_mux1:inst3|lpm_mux:lpm_mux_component
+ 28. Parameter Settings for User Entity Instance: lpm_mux8:inst9|lpm_mux:lpm_mux_component
+ 29. Parameter Settings for User Entity Instance: const15:inst4|lpm_constant:lpm_constant_component
+ 30. Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF__dual_rtl_0
+ 31. Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF_rtl_1
+ 32. Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_mult:Mult0
+ 33. Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Div0
+ 34. Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Mod0
+ 35. lpm_mult Parameter Settings by Entity Instance
+ 36. Analysis & Synthesis Messages
+ 37. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Sep 07 17:33:59 2012    ;
+; Quartus II Version                 ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name                      ; CPU                                      ;
+; Top-level Entity Name              ; CPU                                      ;
+; Family                             ; Cyclone III                              ;
+; Total logic elements               ; 5,483                                    ;
+;     Total combinational functions  ; 5,483                                    ;
+;     Dedicated logic registers      ; 2,332                                    ;
+; Total registers                    ; 2332                                     ;
+; Total pins                         ; 170                                      ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 2,048                                    ;
+; Embedded Multiplier 9-bit elements ; 8                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                          ; CPU                ; CPU                ;
+; Family name                                                                    ; Cyclone III        ; Stratix II         ;
+; Type of Retiming Performed During Resynthesis                                  ; Full               ;                    ;
+; Resynthesis Optimization Effort                                                ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                                       ; Normal             ;                    ;
+; Use Generated Physical Constraints File                                        ; On                 ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; DSP Block Balancing                                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II/Cyclone III                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                     ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+
+; ALU.v                            ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/ALU.v                      ;
+; Controler.v                      ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/Controler.v                ;
+; CP0.v                            ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/CP0.v                      ;
+; CPU.bdf                          ; yes             ; User Block Diagram/Schematic File  ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/CPU.bdf                    ;
+; expand1_32.v                     ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/expand1_32.v               ;
+; IR.v                             ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/IR.v                       ;
+; J.v                              ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/J.v                        ;
+; Mem.v                            ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/Mem.v                      ;
+; MIPS-C.bdf                       ; yes             ; User Block Diagram/Schematic File  ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/MIPS-C.bdf                 ;
+; MIPS.bdf                         ; yes             ; User Block Diagram/Schematic File  ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/MIPS.bdf                   ;
+; Mul.v                            ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/Mul.v                      ;
+; PC.v                             ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/PC.v                       ;
+; Reg.v                            ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/Reg.v                      ;
+; RegFile.v                        ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/RegFile.v                  ;
+; Shifter.v                        ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/Shifter.v                  ;
+; Shifter2.v                       ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/Shifter2.v                 ;
+; SymbolExpasion.v                 ; yes             ; User Verilog HDL File              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/SymbolExpasion.v           ;
+; lpm_mux4.v                       ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/lpm_mux4.v                 ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/lpm_mux.tdf                             ;
+; aglobal72.inc                    ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/aglobal72.inc                           ;
+; muxlut.inc                       ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/muxlut.inc                              ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/bypassff.inc                            ;
+; altshift.inc                     ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/altshift.inc                            ;
+; db/mux_nrc.tdf                   ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/mux_nrc.tdf             ;
+; lpm_mux2.v                       ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/lpm_mux2.v                 ;
+; db/mux_krc.tdf                   ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/mux_krc.tdf             ;
+; lpm_mux5.v                       ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/lpm_mux5.v                 ;
+; db/mux_lrc.tdf                   ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/mux_lrc.tdf             ;
+; lpm_mux7.v                       ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/lpm_mux7.v                 ;
+; db/mux_2qc.tdf                   ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/mux_2qc.tdf             ;
+; const14.v                        ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/const14.v                  ;
+; lpm_constant.tdf                 ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/lpm_constant.tdf                        ;
+; const0.v                         ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/const0.v                   ;
+; const1.v                         ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/const1.v                   ;
+; lpm_mux6.v                       ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/lpm_mux6.v                 ;
+; const4.v                         ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/const4.v                   ;
+; lpm_mux3.v                       ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/lpm_mux3.v                 ;
+; db/mux_4qc.tdf                   ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/mux_4qc.tdf             ;
+; const31.v                        ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/const31.v                  ;
+; lpm_mux1.v                       ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/lpm_mux1.v                 ;
+; db/mux_irc.tdf                   ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/mux_irc.tdf             ;
+; lpm_mux8.v                       ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/lpm_mux8.v                 ;
+; db/mux_1qc.tdf                   ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/mux_1qc.tdf             ;
+; const15.v                        ; yes             ; Other                              ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/const15.v                  ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/altsyncram.tdf                          ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/lpm_mux.inc                             ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/lpm_decode.inc                          ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/a_rdenreg.inc                           ;
+; altrom.inc                       ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/altrom.inc                              ;
+; altram.inc                       ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/altram.inc                              ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/altdpram.inc                            ;
+; altqpram.inc                     ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/altqpram.inc                            ;
+; db/altsyncram_ice1.tdf           ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/altsyncram_ice1.tdf     ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/lpm_mult.tdf                            ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/lpm_add_sub.inc                         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/multcore.inc                            ;
+; db/mult_i211.tdf                 ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/mult_i211.tdf           ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/lpm_divide.tdf                          ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/abs_divider.inc                         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; d:/altera/72/quartus/libraries/megafunctions/sign_div_unsign.inc                     ;
+; db/lpm_divide_8jm.tdf            ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/lpm_divide_8jm.tdf      ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/sign_div_unsign_9nh.tdf ;
+; db/alt_u_div_t8f.tdf             ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/alt_u_div_t8f.tdf       ;
+; db/add_sub_unc.tdf               ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/add_sub_unc.tdf         ;
+; db/add_sub_vnc.tdf               ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/add_sub_vnc.tdf         ;
+; db/lpm_divide_bbm.tdf            ; yes             ; Auto-Generated Megafunction        ; F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/db/lpm_divide_bbm.tdf      ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 5,483      ;
+;                                             ;            ;
+; Total combinational functions               ; 5483       ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 3356       ;
+;     -- 3 input functions                    ; 1811       ;
+;     -- <=2 input functions                  ; 316        ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 4206       ;
+;     -- arithmetic mode                      ; 1277       ;
+;                                             ;            ;
+; Total registers                             ; 2332       ;
+;     -- Dedicated logic registers            ; 2332       ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 170        ;
+; Total memory bits                           ; 2048       ;
+; Embedded Multiplier 9-bit elements          ; 8          ;
+; Maximum fan-out node                        ; PClk~input ;
+; Maximum fan-out                             ; 2396       ;
+; Total fan-out                               ; 28000      ;
+; Average fan-out                             ; 3.40       ;
++---------------------------------------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                        ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                           ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |CPU                                            ; 5483 (0)          ; 2332 (0)     ; 2048        ; 8            ; 0       ; 4         ; 170  ; 0            ; |CPU                                                                                                                                                          ; work         ;
+;    |MIPS-C:inst|                                ; 4594 (0)          ; 1276 (0)     ; 2048        ; 8            ; 0       ; 4         ; 0    ; 0            ; |CPU|MIPS-C:inst                                                                                                                                              ; work         ;
+;       |Controler:inst1|                         ; 201 (201)         ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|Controler:inst1                                                                                                                              ; work         ;
+;       |MIPS:inst|                               ; 4393 (0)          ; 1255 (0)     ; 2048        ; 8            ; 0       ; 4         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst                                                                                                                                    ; work         ;
+;          |ALU:inst_ALU|                         ; 277 (277)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|ALU:inst_ALU                                                                                                                       ; work         ;
+;          |CP0:inst_CP0|                         ; 700 (700)         ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|CP0:inst_CP0                                                                                                                       ; work         ;
+;          |IR:inst_IR|                           ; 33 (33)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|IR:inst_IR                                                                                                                         ; work         ;
+;          |Mul:inst_MUL|                         ; 2470 (232)        ; 129 (129)    ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL                                                                                                                       ; work         ;
+;             |lpm_divide:Div0|                   ; 1064 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Div0                                                                                                       ; work         ;
+;                |lpm_divide_8jm:auto_generated|  ; 1064 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Div0|lpm_divide_8jm:auto_generated                                                                         ; work         ;
+;                   |sign_div_unsign_9nh:divider| ; 1064 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Div0|lpm_divide_8jm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
+;                      |alt_u_div_t8f:divider|    ; 1064 (1064)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Div0|lpm_divide_8jm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_t8f:divider                       ; work         ;
+;             |lpm_divide:Mod0|                   ; 1067 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Mod0                                                                                                       ; work         ;
+;                |lpm_divide_bbm:auto_generated|  ; 1067 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Mod0|lpm_divide_bbm:auto_generated                                                                         ; work         ;
+;                   |sign_div_unsign_9nh:divider| ; 1067 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
+;                      |alt_u_div_t8f:divider|    ; 1067 (1066)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_t8f:divider                       ; work         ;
+;                         |add_sub_vnc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Mod0|lpm_divide_bbm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_t8f:divider|add_sub_vnc:add_sub_1 ; work         ;
+;             |lpm_mult:Mult0|                    ; 107 (0)           ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_mult:Mult0                                                                                                        ; work         ;
+;                |mult_i211:auto_generated|       ; 107 (107)         ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_mult:Mult0|mult_i211:auto_generated                                                                               ; work         ;
+;          |PC:inst_PC|                           ; 127 (127)         ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|PC:inst_PC                                                                                                                         ; work         ;
+;          |Regfile:RF|                           ; 39 (39)           ; 43 (43)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Regfile:RF                                                                                                                         ; work         ;
+;             |altsyncram:RF__dual_rtl_0|         ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF__dual_rtl_0                                                                                               ; work         ;
+;                |altsyncram_ice1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF__dual_rtl_0|altsyncram_ice1:auto_generated                                                                ; work         ;
+;             |altsyncram:RF_rtl_1|               ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF_rtl_1                                                                                                     ; work         ;
+;                |altsyncram_ice1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF_rtl_1|altsyncram_ice1:auto_generated                                                                      ; work         ;
+;          |Shifter:inst_Shifter|                 ; 210 (210)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|Shifter:inst_Shifter                                                                                                               ; work         ;
+;          |lpm_mux2:inst4|                       ; 282 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4                                                                                                                     ; work         ;
+;             |lpm_mux:lpm_mux_component|         ; 282 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component                                                                                           ; work         ;
+;                |mux_krc:auto_generated|         ; 282 (282)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated                                                                    ; work         ;
+;          |lpm_mux3:inst5|                       ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux3:inst5                                                                                                                     ; work         ;
+;             |lpm_mux:lpm_mux_component|         ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux3:inst5|lpm_mux:lpm_mux_component                                                                                           ; work         ;
+;                |mux_4qc:auto_generated|         ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux3:inst5|lpm_mux:lpm_mux_component|mux_4qc:auto_generated                                                                    ; work         ;
+;          |lpm_mux4:inst7|                       ; 127 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux4:inst7                                                                                                                     ; work         ;
+;             |lpm_mux:lpm_mux_component|         ; 127 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux4:inst7|lpm_mux:lpm_mux_component                                                                                           ; work         ;
+;                |mux_nrc:auto_generated|         ; 127 (127)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux4:inst7|lpm_mux:lpm_mux_component|mux_nrc:auto_generated                                                                    ; work         ;
+;          |lpm_mux5:inst|                        ; 63 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux5:inst                                                                                                                      ; work         ;
+;             |lpm_mux:lpm_mux_component|         ; 63 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux5:inst|lpm_mux:lpm_mux_component                                                                                            ; work         ;
+;                |mux_lrc:auto_generated|         ; 63 (63)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux5:inst|lpm_mux:lpm_mux_component|mux_lrc:auto_generated                                                                     ; work         ;
+;          |lpm_mux6:inst10|                      ; 50 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux6:inst10                                                                                                                    ; work         ;
+;             |lpm_mux:lpm_mux_component|         ; 50 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux6:inst10|lpm_mux:lpm_mux_component                                                                                          ; work         ;
+;                |mux_nrc:auto_generated|         ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux6:inst10|lpm_mux:lpm_mux_component|mux_nrc:auto_generated                                                                   ; work         ;
+;          |lpm_mux7:inst2|                       ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux7:inst2                                                                                                                     ; work         ;
+;             |lpm_mux:lpm_mux_component|         ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux7:inst2|lpm_mux:lpm_mux_component                                                                                           ; work         ;
+;                |mux_2qc:auto_generated|         ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux7:inst2|lpm_mux:lpm_mux_component|mux_2qc:auto_generated                                                                    ; work         ;
+;          |lpm_mux7:inst3|                       ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux7:inst3                                                                                                                     ; work         ;
+;             |lpm_mux:lpm_mux_component|         ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux7:inst3|lpm_mux:lpm_mux_component                                                                                           ; work         ;
+;                |mux_2qc:auto_generated|         ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux7:inst3|lpm_mux:lpm_mux_component|mux_2qc:auto_generated                                                                    ; work         ;
+;    |Mem:inst1|                                  ; 810 (810)         ; 1056 (1056)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|Mem:inst1                                                                                                                                                ; work         ;
+;    |lpm_mux1:inst3|                             ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|lpm_mux1:inst3                                                                                                                                           ; work         ;
+;       |lpm_mux:lpm_mux_component|               ; 64 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|lpm_mux1:inst3|lpm_mux:lpm_mux_component                                                                                                                 ; work         ;
+;          |mux_irc:auto_generated|               ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|lpm_mux1:inst3|lpm_mux:lpm_mux_component|mux_irc:auto_generated                                                                                          ; work         ;
+;    |lpm_mux8:inst9|                             ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|lpm_mux8:inst9                                                                                                                                           ; work         ;
+;       |lpm_mux:lpm_mux_component|               ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|lpm_mux8:inst9|lpm_mux:lpm_mux_component                                                                                                                 ; work         ;
+;          |mux_1qc:auto_generated|               ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|lpm_mux8:inst9|lpm_mux:lpm_mux_component|mux_1qc:auto_generated                                                                                          ; work         ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                         ;
++------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                 ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF__dual_rtl_0|altsyncram_ice1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF_rtl_1|altsyncram_ice1:auto_generated|ALTSYNCRAM       ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
++------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 4           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 8           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 4           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; MIPS-C:inst|Controler:inst1|tmpZero                ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++----------------------------------------------+----------------------------------------------------------+
+; Register name                                ; Reason for Removal                                       ;
++----------------------------------------------+----------------------------------------------------------+
+; MIPS-C:inst|MIPS:inst|Regfile:RF|LLbitout    ; Stuck at VCC due to stuck port data_in                   ;
+; MIPS-C:inst|Controler:inst1|state[17]        ; Stuck at GND due to stuck port data_in                   ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~5  ; Merged with MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[16]      ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~8  ; Merged with MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[17]      ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~11 ; Merged with MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[18]      ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~14 ; Merged with MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[19]      ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~17 ; Merged with MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[20]      ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~19       ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~19 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~1        ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~1  ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~4        ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~4  ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~7        ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~7  ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~10       ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~10 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~13       ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~13 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~16       ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~16 ;
+; MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[21]      ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~5        ;
+; MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[22]      ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~8        ;
+; MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[23]      ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~11       ;
+; MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[24]      ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~14       ;
+; MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[25]      ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~17       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~21 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~21       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~23 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~23       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~25 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~25       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~27 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~27       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~29 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~29       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~31 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~31       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~33 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~33       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~35 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~35       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~37 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~37       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~39 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~39       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~41 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~41       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~43 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~43       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~45 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~45       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~47 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~47       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~49 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~49       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~51 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~51       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~53 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~53       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~55 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~55       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~57 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~57       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~59 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~59       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~61 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~61       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~63 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~63       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~65 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~65       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~67 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~67       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~69 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~69       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~71 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~71       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~73 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~73       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~75 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~75       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~77 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~77       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~79 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~79       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~81 ; Merged with MIPS-C:inst|MIPS:inst|Regfile:RF|RF~81       ;
+; Total Number of Removed Registers = 50       ;                                                          ;
++----------------------------------------------+----------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2332  ;
+; Number of registers using Synchronous Clear  ; 65    ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 469   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2196  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------+
+; Inverted Register Statistics                          ;
++---------------------------------------------+---------+
+; Inverted Register                           ; Fan out ;
++---------------------------------------------+---------+
+; MIPS-C:inst|Controler:inst1|IRWrite         ; 26      ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[31] ; 4       ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[29] ; 4       ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[28] ; 4       ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[27] ; 4       ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[26] ; 4       ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[25] ; 4       ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[24] ; 4       ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[23] ; 4       ;
+; MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[22] ; 4       ;
+; Mem:inst1|memory[6][31]                     ; 1       ;
+; Mem:inst1|memory[4][31]                     ; 1       ;
+; Mem:inst1|memory[8][31]                     ; 1       ;
+; Mem:inst1|memory[9][31]                     ; 1       ;
+; Mem:inst1|memory[3][31]                     ; 1       ;
+; Mem:inst1|memory[2][7]                      ; 1       ;
+; Mem:inst1|memory[6][30]                     ; 1       ;
+; Mem:inst1|memory[2][29]                     ; 1       ;
+; Mem:inst1|memory[9][29]                     ; 1       ;
+; Mem:inst1|memory[8][28]                     ; 1       ;
+; Mem:inst1|memory[4][28]                     ; 1       ;
+; Mem:inst1|memory[3][28]                     ; 1       ;
+; Mem:inst1|memory[8][27]                     ; 1       ;
+; Mem:inst1|memory[6][27]                     ; 1       ;
+; Mem:inst1|memory[8][26]                     ; 1       ;
+; Mem:inst1|memory[7][25]                     ; 1       ;
+; Mem:inst1|memory[5][25]                     ; 1       ;
+; Mem:inst1|memory[9][25]                     ; 1       ;
+; Mem:inst1|memory[6][24]                     ; 1       ;
+; Mem:inst1|memory[4][24]                     ; 1       ;
+; Mem:inst1|memory[3][24]                     ; 1       ;
+; Mem:inst1|memory[9][24]                     ; 1       ;
+; Mem:inst1|memory[9][23]                     ; 1       ;
+; Mem:inst1|memory[9][22]                     ; 1       ;
+; Mem:inst1|memory[6][21]                     ; 1       ;
+; Mem:inst1|memory[7][21]                     ; 1       ;
+; Mem:inst1|memory[9][21]                     ; 1       ;
+; Mem:inst1|memory[8][20]                     ; 1       ;
+; Mem:inst1|memory[4][20]                     ; 1       ;
+; Mem:inst1|memory[3][20]                     ; 1       ;
+; Mem:inst1|memory[5][20]                     ; 1       ;
+; Mem:inst1|memory[9][20]                     ; 1       ;
+; Mem:inst1|memory[2][19]                     ; 1       ;
+; Mem:inst1|memory[4][16]                     ; 1       ;
+; Mem:inst1|memory[5][16]                     ; 1       ;
+; Mem:inst1|memory[7][15]                     ; 1       ;
+; Mem:inst1|memory[2][15]                     ; 1       ;
+; Mem:inst1|memory[5][14]                     ; 1       ;
+; Mem:inst1|memory[2][13]                     ; 1       ;
+; Mem:inst1|memory[2][12]                     ; 1       ;
+; Mem:inst1|memory[5][11]                     ; 1       ;
+; Mem:inst1|memory[2][11]                     ; 1       ;
+; Mem:inst1|memory[2][10]                     ; 1       ;
+; Mem:inst1|memory[2][9]                      ; 1       ;
+; Mem:inst1|memory[2][8]                      ; 1       ;
+; Mem:inst1|memory[2][6]                      ; 1       ;
+; Mem:inst1|memory[9][3]                      ; 1       ;
+; Mem:inst1|memory[4][2]                      ; 1       ;
+; Mem:inst1|memory[0][2]                      ; 1       ;
+; Mem:inst1|memory[5][1]                      ; 1       ;
+; Mem:inst1|memory[1][1]                      ; 1       ;
+; Mem:inst1|memory[6][1]                      ; 1       ;
+; Mem:inst1|memory[7][0]                      ; 1       ;
+; Mem:inst1|memory[5][0]                      ; 1       ;
+; Mem:inst1|memory[0][0]                      ; 1       ;
+; Total number of inverted registers = 65     ;         ;
++---------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                 ;
++----------------------------------------------+---------------------------------------------+
+; Register Name                                ; RAM Name                                    ;
++----------------------------------------------+---------------------------------------------+
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~1  ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~4  ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~5  ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~7  ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~8  ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~10 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~11 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~13 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~14 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~16 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~17 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~19 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~21 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~23 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~25 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~27 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~29 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~31 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~33 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~35 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~37 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~39 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~41 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~43 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~45 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~47 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~49 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~51 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~53 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~55 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~57 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~59 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~61 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~63 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~65 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~67 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~69 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~71 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~73 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~75 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~77 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~79 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~81 ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0 ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~1        ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~4        ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~5        ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~7        ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~8        ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~10       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~11       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~13       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~14       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~16       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~17       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~19       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~21       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~23       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~25       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~27       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~29       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~31       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~33       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~35       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~37       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~39       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~41       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~43       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~45       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~47       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~49       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~51       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~53       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~55       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~57       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~59       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~61       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~63       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~65       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~67       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~69       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~71       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~73       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~75       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~77       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~79       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
+; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~81       ; MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0       ;
++----------------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[29]                                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|CP0:inst_CP0|regs[13][6]                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|CP0:inst_CP0|regs[13][5]                                                        ;
+; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|result[53]                                                         ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|hi[21]                                                             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lo[4]                                                              ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[0]                                                            ;
+; 33:1               ; 7 bits    ; 154 LEs       ; 154 LEs              ; 0 LEs                  ; Yes        ; |CPU|Mem:inst1|DataOut[1]                                                                                  ;
+; 33:1               ; 8 bits    ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; Yes        ; |CPU|Mem:inst1|DataOut[12]                                                                                 ;
+; 33:1               ; 16 bits   ; 352 LEs       ; 352 LEs              ; 0 LEs                  ; Yes        ; |CPU|Mem:inst1|DataOut[23]                                                                                 ;
+; 11:1               ; 17 bits   ; 119 LEs       ; 51 LEs               ; 68 LEs                 ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[19]                                                           ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 9 LEs                ; 15 LEs                 ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[9]                                                            ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[29]                                                           ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 18 LEs               ; 24 LEs                 ; Yes        ; |CPU|MIPS-C:inst|MIPS:inst|PC:inst_PC|PC_out[26]                                                           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|IR:inst_IR|IR~43                                                                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |CPU|lpm_mux1:inst3|lpm_mux:lpm_mux_component|mux_irc:auto_generated|result_node[13]                       ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |CPU|MIPS-C:inst|Controler:inst1|state~73                                                                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |CPU|MIPS-C:inst|MIPS:inst|ALU:inst_ALU|Add0                                                               ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|CP0:inst_CP0|Mux10                                                              ;
+; 12:1               ; 31 bits   ; 248 LEs       ; 124 LEs              ; 124 LEs                ; No         ; |CPU|MIPS-C:inst|MIPS:inst|ALU:inst_ALU|Mux23                                                              ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |CPU|MIPS-C:inst|MIPS:inst|ALU:inst_ALU|Add0                                                               ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated|result_node[23] ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 56 LEs               ; 8 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated|result_node[13] ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated|result_node[25] ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 16 LEs               ; 2 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated|result_node[28] ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated|result_node[7]  ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated|result_node[30] ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated|result_node[3]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |CPU|MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated|result_node[1]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Source assignments for MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF__dual_rtl_0|altsyncram_ice1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                 ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                  ;
++---------------------------------+--------------------+------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Source assignments for MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF_rtl_1|altsyncram_ice1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                           ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                            ;
++---------------------------------+--------------------+------+----------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux4:inst7|lpm_mux:lpm_mux_component ;
++------------------------+-------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                 ;
++------------------------+-------------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTH              ; 32          ; Signed Integer                                                       ;
+; LPM_SIZE               ; 5           ; Signed Integer                                                       ;
+; LPM_WIDTHS             ; 3           ; Signed Integer                                                       ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                              ;
+; CBXI_PARAMETER         ; mux_nrc     ; Untyped                                                              ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                              ;
++------------------------+-------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component ;
++------------------------+-------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                 ;
++------------------------+-------------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTH              ; 32          ; Signed Integer                                                       ;
+; LPM_SIZE               ; 3           ; Signed Integer                                                       ;
+; LPM_WIDTHS             ; 2           ; Signed Integer                                                       ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                              ;
+; CBXI_PARAMETER         ; mux_krc     ; Untyped                                                              ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                              ;
++------------------------+-------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux5:inst|lpm_mux:lpm_mux_component ;
++------------------------+-------------+---------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                ;
++------------------------+-------------+---------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                      ;
+; LPM_WIDTH              ; 32          ; Signed Integer                                                      ;
+; LPM_SIZE               ; 4           ; Signed Integer                                                      ;
+; LPM_WIDTHS             ; 2           ; Signed Integer                                                      ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                             ;
+; CBXI_PARAMETER         ; mux_lrc     ; Untyped                                                             ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                             ;
++------------------------+-------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux7:inst3|lpm_mux:lpm_mux_component ;
++------------------------+-------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                 ;
++------------------------+-------------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTH              ; 5           ; Signed Integer                                                       ;
+; LPM_SIZE               ; 2           ; Signed Integer                                                       ;
+; LPM_WIDTHS             ; 1           ; Signed Integer                                                       ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                              ;
+; CBXI_PARAMETER         ; mux_2qc     ; Untyped                                                              ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                              ;
++------------------------+-------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|const14:14|lpm_constant:lpm_constant_component ;
++--------------------+------------------+---------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                      ;
++--------------------+------------------+---------------------------------------------------------------------------+
+; LPM_WIDTH          ; 5                ; Signed Integer                                                            ;
+; LPM_CVALUE         ; 14               ; Signed Integer                                                            ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                   ;
+; CBXI_PARAMETER     ; lpm_constant_sf6 ; Untyped                                                                   ;
++--------------------+------------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux6:inst10|lpm_mux:lpm_mux_component ;
++------------------------+-------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                  ;
++------------------------+-------------+-----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                        ;
+; LPM_WIDTH              ; 32          ; Signed Integer                                                        ;
+; LPM_SIZE               ; 5           ; Signed Integer                                                        ;
+; LPM_WIDTHS             ; 3           ; Signed Integer                                                        ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                               ;
+; CBXI_PARAMETER         ; mux_nrc     ; Untyped                                                               ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                               ;
++------------------------+-------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux7:inst2|lpm_mux:lpm_mux_component ;
++------------------------+-------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                 ;
++------------------------+-------------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTH              ; 5           ; Signed Integer                                                       ;
+; LPM_SIZE               ; 2           ; Signed Integer                                                       ;
+; LPM_WIDTHS             ; 1           ; Signed Integer                                                       ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                              ;
+; CBXI_PARAMETER         ; mux_2qc     ; Untyped                                                              ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                              ;
++------------------------+-------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux3:inst5|lpm_mux:lpm_mux_component ;
++------------------------+-------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                 ;
++------------------------+-------------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTH              ; 5           ; Signed Integer                                                       ;
+; LPM_SIZE               ; 3           ; Signed Integer                                                       ;
+; LPM_WIDTHS             ; 2           ; Signed Integer                                                       ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                              ;
+; CBXI_PARAMETER         ; mux_4qc     ; Untyped                                                              ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                              ;
++------------------------+-------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|const31:31|lpm_constant:lpm_constant_component ;
++--------------------+------------------+---------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                      ;
++--------------------+------------------+---------------------------------------------------------------------------+
+; LPM_WIDTH          ; 5                ; Signed Integer                                                            ;
+; LPM_CVALUE         ; 31               ; Signed Integer                                                            ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                   ;
+; CBXI_PARAMETER     ; lpm_constant_eh6 ; Untyped                                                                   ;
++--------------------+------------------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MIPS-C:inst|MIPS:inst|lpm_mux1:inst1|lpm_mux:lpm_mux_component ;
++------------------------+-------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                 ;
++------------------------+-------------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTH              ; 32          ; Signed Integer                                                       ;
+; LPM_SIZE               ; 2           ; Signed Integer                                                       ;
+; LPM_WIDTHS             ; 1           ; Signed Integer                                                       ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                              ;
+; CBXI_PARAMETER         ; mux_irc     ; Untyped                                                              ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                              ;
++------------------------+-------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_mux1:inst3|lpm_mux:lpm_mux_component ;
++------------------------+-------------+------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                           ;
++------------------------+-------------+------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                 ;
+; LPM_WIDTH              ; 32          ; Signed Integer                                 ;
+; LPM_SIZE               ; 2           ; Signed Integer                                 ;
+; LPM_WIDTHS             ; 1           ; Signed Integer                                 ;
+; LPM_PIPELINE           ; 0           ; Untyped                                        ;
+; CBXI_PARAMETER         ; mux_irc     ; Untyped                                        ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                        ;
++------------------------+-------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_mux8:inst9|lpm_mux:lpm_mux_component ;
++------------------------+-------------+------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                           ;
++------------------------+-------------+------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                 ;
+; LPM_WIDTH              ; 4           ; Signed Integer                                 ;
+; LPM_SIZE               ; 2           ; Signed Integer                                 ;
+; LPM_WIDTHS             ; 1           ; Signed Integer                                 ;
+; LPM_PIPELINE           ; 0           ; Untyped                                        ;
+; CBXI_PARAMETER         ; mux_1qc     ; Untyped                                        ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                        ;
++------------------------+-------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: const15:inst4|lpm_constant:lpm_constant_component ;
++--------------------+------------------+--------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                   ;
++--------------------+------------------+--------------------------------------------------------+
+; LPM_WIDTH          ; 4                ; Signed Integer                                         ;
+; LPM_CVALUE         ; 15               ; Signed Integer                                         ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                ;
+; CBXI_PARAMETER     ; lpm_constant_tf6 ; Untyped                                                ;
++--------------------+------------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF__dual_rtl_0 ;
++------------------------------------+----------------------+-------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                            ;
++------------------------------------+----------------------+-------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                         ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                  ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                         ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                         ;
+; WIDTH_A                            ; 32                   ; Untyped                                         ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                         ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                         ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                         ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                         ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                         ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                         ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                         ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                         ;
+; WIDTH_B                            ; 32                   ; Untyped                                         ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                         ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                         ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                         ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                         ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                         ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                         ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                         ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                         ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                         ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                         ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                         ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                         ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                         ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                         ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                         ;
+; DEVICE_FAMILY                      ; Cyclone III          ; Untyped                                         ;
+; CBXI_PARAMETER                     ; altsyncram_ice1      ; Untyped                                         ;
++------------------------------------+----------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF_rtl_1 ;
++------------------------------------+----------------------+-------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                      ;
++------------------------------------+----------------------+-------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                   ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                            ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                   ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                   ;
+; WIDTH_A                            ; 32                   ; Untyped                                   ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                   ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                   ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                   ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                   ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                   ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; WIDTH_B                            ; 32                   ; Untyped                                   ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                   ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                   ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                   ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                   ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                   ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                   ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                   ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                   ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                   ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                   ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                   ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                   ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                   ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                   ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                   ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                   ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                   ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                   ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                   ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                   ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                   ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                   ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                   ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                   ;
+; DEVICE_FAMILY                      ; Cyclone III          ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_ice1      ; Untyped                                   ;
++------------------------------------+----------------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_mult:Mult0 ;
++------------------------------------------------+-------------+-------------------------------------+
+; Parameter Name                                 ; Value       ; Type                                ;
++------------------------------------------------+-------------+-------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON          ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF         ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS                            ; ON          ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF         ; IGNORE_CASCADE                      ;
+; LPM_WIDTHA                                     ; 32          ; Untyped                             ;
+; LPM_WIDTHB                                     ; 32          ; Untyped                             ;
+; LPM_WIDTHP                                     ; 64          ; Untyped                             ;
+; LPM_WIDTHR                                     ; 64          ; Untyped                             ;
+; LPM_WIDTHS                                     ; 1           ; Untyped                             ;
+; LPM_REPRESENTATION                             ; UNSIGNED    ; Untyped                             ;
+; LPM_PIPELINE                                   ; 0           ; Untyped                             ;
+; LATENCY                                        ; 0           ; Untyped                             ;
+; INPUT_A_IS_CONSTANT                            ; NO          ; Untyped                             ;
+; INPUT_B_IS_CONSTANT                            ; NO          ; Untyped                             ;
+; USE_EAB                                        ; OFF         ; Untyped                             ;
+; MAXIMIZE_SPEED                                 ; 5           ; Untyped                             ;
+; DEVICE_FAMILY                                  ; Cyclone III ; Untyped                             ;
+; CARRY_CHAIN                                    ; MANUAL      ; Untyped                             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT         ; TECH_MAPPER_APEX20K                 ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO        ; Untyped                             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0           ; Untyped                             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0           ; Untyped                             ;
+; CBXI_PARAMETER                                 ; mult_i211   ; Untyped                             ;
+; INPUT_A_FIXED_VALUE                            ; Bx          ; Untyped                             ;
+; INPUT_B_FIXED_VALUE                            ; Bx          ; Untyped                             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF         ; Untyped                             ;
++------------------------------------------------+-------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_8jm ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_bbm ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                            ;
++---------------------------------------+---------------------------------------------------+
+; Name                                  ; Value                                             ;
++---------------------------------------+---------------------------------------------------+
+; Number of entity instances            ; 1                                                 ;
+; Entity Instance                       ; MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                                ;
+;     -- LPM_WIDTHB                     ; 32                                                ;
+;     -- LPM_WIDTHP                     ; 64                                                ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                          ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                ;
+;     -- USE_EAB                        ; OFF                                               ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                              ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                ;
++---------------------------------------+---------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Fri Sep 07 17:32:52 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
+Info: Found 1 design units, including 1 entities, in source file ALU.v
+    Info: Found entity 1: ALU
+Info: Found 1 design units, including 1 entities, in source file Controler.v
+    Info: Found entity 1: Controler
+Info: Found 1 design units, including 1 entities, in source file CP0.v
+    Info: Found entity 1: CP0
+Info: Found 1 design units, including 1 entities, in source file CPU.bdf
+    Info: Found entity 1: CPU
+Info: Found 1 design units, including 1 entities, in source file expand1_32.v
+    Info: Found entity 1: expand1_32
+Info: Found 1 design units, including 1 entities, in source file IR.v
+    Info: Found entity 1: IR
+Info: Found 1 design units, including 1 entities, in source file J.v
+    Info: Found entity 1: J
+Info: Found 1 design units, including 1 entities, in source file Mem.v
+    Info: Found entity 1: Mem
+Info: Found 1 design units, including 1 entities, in source file MIPS-C.bdf
+    Info: Found entity 1: MIPS-C
+Info: Found 1 design units, including 1 entities, in source file MIPS.bdf
+    Info: Found entity 1: MIPS
+Info: Found 1 design units, including 1 entities, in source file Mul.v
+    Info: Found entity 1: Mul
+Info: Found 1 design units, including 1 entities, in source file PC.v
+    Info: Found entity 1: PC
+Info: Found 1 design units, including 1 entities, in source file Reg.v
+    Info: Found entity 1: Reg
+Info: Found 1 design units, including 1 entities, in source file RegFile.v
+    Info: Found entity 1: Regfile
+Info: Found 1 design units, including 1 entities, in source file Shifter.v
+    Info: Found entity 1: Shifter
+Info: Found 1 design units, including 1 entities, in source file Shifter2.v
+    Info: Found entity 1: Shifter2
+Info: Found 1 design units, including 1 entities, in source file SymbolExpasion.v
+    Info: Found entity 1: SymbolExpasion
+Info: Elaborating entity "CPU" for the top level hierarchy
+Info: Elaborating entity "MIPS-C" for hierarchy "MIPS-C:inst"
+Warning: Pin "IRWrite" is missing source
+Info: Elaborating entity "Controler" for hierarchy "MIPS-C:inst|Controler:inst1"
+Warning (10230): Verilog HDL assignment warning at Controler.v(119): truncated value with size 32 to match size of target (1)
+Info (10264): Verilog HDL Case Statement information at Controler.v(148): all case item expressions in this case statement are onehot
+Info (10041): Inferred latch for "tmpZero" at Controler.v(119)
+Info: Elaborating entity "MIPS" for hierarchy "MIPS-C:inst|MIPS:inst"
+Info: Elaborating entity "Regfile" for hierarchy "MIPS-C:inst|MIPS:inst|Regfile:RF"
+Info: Elaborating entity "IR" for hierarchy "MIPS-C:inst|MIPS:inst|IR:inst_IR"
+Warning: Using design file lpm_mux4.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux4
+Info: Elaborating entity "lpm_mux4" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux4:inst7"
+Info: Found 1 design units, including 1 entities, in source file d:/altera/72/quartus/libraries/megafunctions/lpm_mux.tdf
+    Info: Found entity 1: lpm_mux
+Info: Elaborating entity "lpm_mux" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux4:inst7|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|lpm_mux4:inst7|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_nrc.tdf
+    Info: Found entity 1: mux_nrc
+Info: Elaborating entity "mux_nrc" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux4:inst7|lpm_mux:lpm_mux_component|mux_nrc:auto_generated"
+Info: Elaborating entity "Reg" for hierarchy "MIPS-C:inst|MIPS:inst|Reg:ALUOutReg"
+Warning: Using design file lpm_mux2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux2
+Info: Elaborating entity "lpm_mux2" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux2:inst4"
+Info: Elaborating entity "lpm_mux" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_krc.tdf
+    Info: Found entity 1: mux_krc
+Info: Elaborating entity "mux_krc" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux2:inst4|lpm_mux:lpm_mux_component|mux_krc:auto_generated"
+Info: Elaborating entity "ALU" for hierarchy "MIPS-C:inst|MIPS:inst|ALU:inst_ALU"
+Warning: Using design file lpm_mux5.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux5
+Info: Elaborating entity "lpm_mux5" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux5:inst"
+Info: Elaborating entity "lpm_mux" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux5:inst|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|lpm_mux5:inst|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_lrc.tdf
+    Info: Found entity 1: mux_lrc
+Info: Elaborating entity "mux_lrc" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux5:inst|lpm_mux:lpm_mux_component|mux_lrc:auto_generated"
+Info: Elaborating entity "PC" for hierarchy "MIPS-C:inst|MIPS:inst|PC:inst_PC"
+Info: Elaborating entity "CP0" for hierarchy "MIPS-C:inst|MIPS:inst|CP0:inst_CP0"
+Warning: Using design file lpm_mux7.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux7
+Info: Elaborating entity "lpm_mux7" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux7:inst3"
+Info: Elaborating entity "lpm_mux" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux7:inst3|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|lpm_mux7:inst3|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_2qc.tdf
+    Info: Found entity 1: mux_2qc
+Info: Elaborating entity "mux_2qc" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux7:inst3|lpm_mux:lpm_mux_component|mux_2qc:auto_generated"
+Warning: Using design file const14.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: const14
+Info: Elaborating entity "const14" for hierarchy "MIPS-C:inst|MIPS:inst|const14:14"
+Info: Found 1 design units, including 1 entities, in source file d:/altera/72/quartus/libraries/megafunctions/lpm_constant.tdf
+    Info: Found entity 1: lpm_constant
+Info: Elaborating entity "lpm_constant" for hierarchy "MIPS-C:inst|MIPS:inst|const14:14|lpm_constant:lpm_constant_component"
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|const14:14|lpm_constant:lpm_constant_component"
+Info: Elaborating entity "J" for hierarchy "MIPS-C:inst|MIPS:inst|J:Jump"
+Warning: Using design file const0.v, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info: Found entity 1: const0_lpm_constant_bm8
+    Info: Found entity 2: const0
+Info: Elaborating entity "const0" for hierarchy "MIPS-C:inst|MIPS:inst|const0:const0"
+Info: Elaborating entity "const0_lpm_constant_bm8" for hierarchy "MIPS-C:inst|MIPS:inst|const0:const0|const0_lpm_constant_bm8:const0_lpm_constant_bm8_component"
+Warning: Using design file const1.v, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info: Found entity 1: const1_lpm_constant_cm8
+    Info: Found entity 2: const1
+Info: Elaborating entity "const1" for hierarchy "MIPS-C:inst|MIPS:inst|const1:1"
+Info: Elaborating entity "const1_lpm_constant_cm8" for hierarchy "MIPS-C:inst|MIPS:inst|const1:1|const1_lpm_constant_cm8:const1_lpm_constant_cm8_component"
+Warning: Using design file lpm_mux6.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux6
+Info: Elaborating entity "lpm_mux6" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux6:inst10"
+Warning: Using design file const4.v, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info: Found entity 1: const4_lpm_constant_fm8
+    Info: Found entity 2: const4
+Info: Elaborating entity "const4" for hierarchy "MIPS-C:inst|MIPS:inst|const4:4"
+Info: Elaborating entity "const4_lpm_constant_fm8" for hierarchy "MIPS-C:inst|MIPS:inst|const4:4|const4_lpm_constant_fm8:const4_lpm_constant_fm8_component"
+Info: Elaborating entity "SymbolExpasion" for hierarchy "MIPS-C:inst|MIPS:inst|SymbolExpasion:inst_SymbolExpasion"
+Warning (10240): Verilog HDL Always Construct warning at SymbolExpasion.v(17): inferring latch(es) for variable "ExtImm32", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "ExtImm32[0]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[1]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[2]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[3]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[4]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[5]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[6]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[7]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[8]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[9]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[10]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[11]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[12]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[13]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[14]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[15]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[16]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[17]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[18]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[19]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[20]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[21]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[22]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[23]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[24]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[25]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[26]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[27]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[28]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[29]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[30]" at SymbolExpasion.v(17)
+Info (10041): Inferred latch for "ExtImm32[31]" at SymbolExpasion.v(17)
+Info: Elaborating entity "Shifter2" for hierarchy "MIPS-C:inst|MIPS:inst|Shifter2:Shifter2"
+Info: Elaborating entity "Shifter" for hierarchy "MIPS-C:inst|MIPS:inst|Shifter:inst_Shifter"
+Info: Elaborating entity "Mul" for hierarchy "MIPS-C:inst|MIPS:inst|Mul:inst_MUL"
+Warning (10036): Verilog HDL or VHDL warning at Mul.v(17): object "working" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Mul.v(31): truncated value with size 32 to match size of target (31)
+Warning (10241): Verilog HDL Function Declaration warning at Mul.v(27): function "result_div" may return a Don't Care value because its output register may not be assigned a value in every possible path through the function
+Warning (10030): Net "result_div[63]" at Mul.v(27) has no driver or initial value, using a default initial value '0'
+Info: Elaborating entity "expand1_32" for hierarchy "MIPS-C:inst|MIPS:inst|expand1_32:inst8"
+Warning: Using design file lpm_mux3.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux3
+Info: Elaborating entity "lpm_mux3" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux3:inst5"
+Info: Elaborating entity "lpm_mux" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux3:inst5|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|lpm_mux3:inst5|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_4qc.tdf
+    Info: Found entity 1: mux_4qc
+Info: Elaborating entity "mux_4qc" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux3:inst5|lpm_mux:lpm_mux_component|mux_4qc:auto_generated"
+Warning: Using design file const31.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: const31
+Info: Elaborating entity "const31" for hierarchy "MIPS-C:inst|MIPS:inst|const31:31"
+Info: Elaborating entity "lpm_constant" for hierarchy "MIPS-C:inst|MIPS:inst|const31:31|lpm_constant:lpm_constant_component"
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|const31:31|lpm_constant:lpm_constant_component"
+Warning: Using design file lpm_mux1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux1
+Info: Elaborating entity "lpm_mux1" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux1:inst1"
+Info: Elaborating entity "lpm_mux" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux1:inst1|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|lpm_mux1:inst1|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_irc.tdf
+    Info: Found entity 1: mux_irc
+Info: Elaborating entity "mux_irc" for hierarchy "MIPS-C:inst|MIPS:inst|lpm_mux1:inst1|lpm_mux:lpm_mux_component|mux_irc:auto_generated"
+Info: Elaborating entity "Mem" for hierarchy "Mem:inst1"
+Warning: Using design file lpm_mux8.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: lpm_mux8
+Info: Elaborating entity "lpm_mux8" for hierarchy "lpm_mux8:inst9"
+Info: Elaborating entity "lpm_mux" for hierarchy "lpm_mux8:inst9|lpm_mux:lpm_mux_component"
+Info: Elaborated megafunction instantiation "lpm_mux8:inst9|lpm_mux:lpm_mux_component"
+Info: Found 1 design units, including 1 entities, in source file db/mux_1qc.tdf
+    Info: Found entity 1: mux_1qc
+Info: Elaborating entity "mux_1qc" for hierarchy "lpm_mux8:inst9|lpm_mux:lpm_mux_component|mux_1qc:auto_generated"
+Warning: Using design file const15.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: const15
+Info: Elaborating entity "const15" for hierarchy "const15:inst4"
+Info: Elaborating entity "lpm_constant" for hierarchy "const15:inst4|lpm_constant:lpm_constant_component"
+Info: Elaborated megafunction instantiation "const15:inst4|lpm_constant:lpm_constant_component"
+Info: Power-up level of register "MIPS-C:inst|MIPS:inst|Regfile:RF|LLbitout" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "MIPS-C:inst|MIPS:inst|Regfile:RF|LLbitout" with stuck data_in port to stuck value VCC
+Warning (14130): Reduced register "MIPS-C:inst|Controler:inst1|state[17]" with stuck data_in port to stuck value GND
+Warning: Inferred RAM node "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning: Inferred RAM node "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~5" merged to single register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[16]"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~8" merged to single register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[17]"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~11" merged to single register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[18]"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~14" merged to single register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[19]"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~17" merged to single register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[20]"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~19" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~19"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~1" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~1"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~4" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~4"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~7" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~7"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~10" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~10"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~13" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~13"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~16" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~16"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[21]" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~5"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[22]" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~8"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[23]" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~11"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[24]" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~14"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|IR:inst_IR|IR[25]" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~17"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~21" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~21"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~23" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~23"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~25" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~25"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~27" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~27"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~29" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~29"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~31" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~31"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~33" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~33"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~35" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~35"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~37" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~37"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~39" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~39"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~41" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~41"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~43" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~43"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~45" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~45"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~47" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~47"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~49" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~49"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~51" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~51"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~53" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~53"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~55" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~55"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~57" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~57"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~59" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~59"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~61" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~61"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~63" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~63"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~65" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~65"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~67" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~67"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~69" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~69"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~71" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~71"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~73" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~73"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~75" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~75"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~77" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~77"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~79" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~79"
+    Info: Duplicate register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~81" merged to single register "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~81"
+Info: Inferred 2 megafunctions from design logic
+    Info: Inferred altsyncram megafunction from the following design logic: "MIPS-C:inst|MIPS:inst|Regfile:RF|RF__dual~0" 
+        Info: Parameter OPERATION_MODE set to DUAL_PORT
+        Info: Parameter WIDTH_A set to 32
+        Info: Parameter WIDTHAD_A set to 5
+        Info: Parameter NUMWORDS_A set to 32
+        Info: Parameter WIDTH_B set to 32
+        Info: Parameter WIDTHAD_B set to 5
+        Info: Parameter NUMWORDS_B set to 32
+        Info: Parameter ADDRESS_ACLR_A set to NONE
+        Info: Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info: Parameter ADDRESS_ACLR_B set to NONE
+        Info: Parameter OUTDATA_ACLR_B set to NONE
+        Info: Parameter ADDRESS_REG_B set to CLOCK0
+        Info: Parameter INDATA_ACLR_A set to NONE
+        Info: Parameter WRCONTROL_ACLR_A set to NONE
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+    Info: Inferred altsyncram megafunction from the following design logic: "MIPS-C:inst|MIPS:inst|Regfile:RF|RF~0" 
+        Info: Parameter OPERATION_MODE set to DUAL_PORT
+        Info: Parameter WIDTH_A set to 32
+        Info: Parameter WIDTHAD_A set to 5
+        Info: Parameter NUMWORDS_A set to 32
+        Info: Parameter WIDTH_B set to 32
+        Info: Parameter WIDTHAD_B set to 5
+        Info: Parameter NUMWORDS_B set to 32
+        Info: Parameter ADDRESS_ACLR_A set to NONE
+        Info: Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info: Parameter ADDRESS_ACLR_B set to NONE
+        Info: Parameter OUTDATA_ACLR_B set to NONE
+        Info: Parameter ADDRESS_REG_B set to CLOCK0
+        Info: Parameter INDATA_ACLR_A set to NONE
+        Info: Parameter WRCONTROL_ACLR_A set to NONE
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+Info: Inferred 3 megafunctions from design logic
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "MIPS-C:inst|MIPS:inst|Mul:inst_MUL|Mult0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "MIPS-C:inst|MIPS:inst|Mul:inst_MUL|Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "MIPS-C:inst|MIPS:inst|Mul:inst_MUL|Mod0"
+Info: Found 1 design units, including 1 entities, in source file d:/altera/72/quartus/libraries/megafunctions/altsyncram.tdf
+    Info: Found entity 1: altsyncram
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|Regfile:RF|altsyncram:RF__dual_rtl_0"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_ice1.tdf
+    Info: Found entity 1: altsyncram_ice1
+Info: Found 1 design units, including 1 entities, in source file d:/altera/72/quartus/libraries/megafunctions/lpm_mult.tdf
+    Info: Found entity 1: lpm_mult
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_mult:Mult0"
+Info: Found 1 design units, including 1 entities, in source file db/mult_i211.tdf
+    Info: Found entity 1: mult_i211
+Info: Found 1 design units, including 1 entities, in source file d:/altera/72/quartus/libraries/megafunctions/lpm_divide.tdf
+    Info: Found entity 1: lpm_divide
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Div0"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_8jm.tdf
+    Info: Found entity 1: lpm_divide_8jm
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info: Found entity 1: sign_div_unsign_9nh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_t8f.tdf
+    Info: Found entity 1: alt_u_div_t8f
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_unc.tdf
+    Info: Found entity 1: add_sub_unc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_vnc.tdf
+    Info: Found entity 1: add_sub_vnc
+Info: Elaborated megafunction instantiation "MIPS-C:inst|MIPS:inst|Mul:inst_MUL|lpm_divide:Mod0"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_bbm.tdf
+    Info: Found entity 1: lpm_divide_bbm
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "IRWrite" stuck at GND
+    Warning (13410): Pin "State[17]" stuck at GND
+Info: Generated suppressed messages file F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/CPU.map.smsg
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ExtInt"
+Info: Implemented 7935 device resources after synthesis - the final resource count might be different
+    Info: Implemented 37 input pins
+    Info: Implemented 133 output pins
+    Info: Implemented 7523 logic cells
+    Info: Implemented 64 RAM segments
+    Info: Implemented 8 DSP elements
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Allocated 178 megabytes of memory during processing
+    Info: Processing ended: Fri Sep 07 17:33:59 2012
+    Info: Elapsed time: 00:01:07
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/学习资料/作业/计算机组成原理课程设计/experiments/5/CPU/CPU.map.smsg.
+
+
